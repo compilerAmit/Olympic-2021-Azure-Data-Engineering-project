@@ -1,0 +1,10 @@
+configs = {"fs.azure.account.auth.type": "OAuth",
+"fs.azure.account.oauth.provider.type": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
+"fs.azure.account.oauth2.client.id": "76627530-d16f-4c4f-a0e2-a7d2429c9f20",
+"fs.azure.account.oauth2.client.secret": '',
+"fs.azure.account.oauth2.client.endpoint": "https://login.microsoftonline.com/0eeece1c-6818-46ee-b915-db4085ac2e5c/oauth2/token"}
+
+dbutils.fs.mount(
+source = "abfss://tokyo-olympic-data@tokyoolympicdataamit.dfs.core.windows.net", # contrainer@storageacc
+mount_point = "/mnt/tokyoolymic",
+extra_configs = configs)
